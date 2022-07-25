@@ -1,0 +1,7 @@
+CRITICAL - 2022-07-25 06:18:06 --> Class "App\Controllers\Api\ExcursionTemplateModel" not found
+in APPPATH\Controllers\Api\ExcursionTemplateController.php on line 62.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Api\ExcursionTemplateController->listExcursionTemplate()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\ExcursionTemplateController))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
