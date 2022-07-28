@@ -39,7 +39,7 @@ $routes->get('/', 'HomeController::index');
 
 $routes->group("api", ["namespace" => "App\Controllers\Api"] , function($routes){
 
-    $routes->group("excursionsTemplate", function($routes){
+    $routes->group("template", function($routes){
        $routes->get("list", "ExcursionTemplateController::listExcursionTemplate");
        $routes->post("add", "ExcursionTemplateController::addExcursionTemplate");
        $routes->get("show/(:num)", "ExcursionTemplateController::showExcursionTemplate/$1");

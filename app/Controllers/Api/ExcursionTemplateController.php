@@ -7,56 +7,75 @@ use App\Models\ExcursionTemplateModel;
 
 class ExcursionTemplateController extends ResourceController
 {
-//     public function addEmployee()
-// 	{
-// 		$rules = [
-// 			"name" => "required",
-// 			"email" => "required|valid_email|is_unique[employees.email]|min_length[6]",
-// 			"phone_no" => "required",
-// 		];
+    public function addExcursionTemplate()
+	{
+		$rules = [
+			"title" => "required|is_unique[excursions_template.title]",
+			"img" => "required",
+			"type" => "required",
+			"description" => "required",
+			"price_default" => "required",
+			"max_num_people_default" => "required",
+		];
 
-// 		$messages = [
-// 			"name" => [
-// 				"required" => "Name is required"
-// 			],
-// 			"email" => [
-// 				"required" => "Email required",
-// 				"valid_email" => "Email address is not in format",
-// 				"is_unique" => "Email address already exists"
-// 			],
-// 			"phone_no" => [
-// 				"required" => "Phone Number is required"
-// 			],
-// 		];
+		$messages = [
+			"title" => [
+				"required" => "title is required",
+				"is_unique" => "title already exists"
+			],
 
-// 		if (!$this->validate($rules, $messages)) {
+			"img" => [
+				"required" => "img route is required",	
+			],
 
-// 			$response = [
-// 				'status' => 500,
-// 				'error' => true,
-// 				'message' => $this->validator->getErrors(),
-// 				'data' => []
-// 			];
-// 		} else {
+			"type" => [
+				"required" => "type is required"
+			],
 
-// 			$emp = new EmployeeModel();
+			"description" => [
+				"required" => "description is required"
+			],
 
-// 			$data['name'] = $this->request->getVar("name");
-// 			$data['email'] = $this->request->getVar("email");
-// 			$data['phone_no'] = $this->request->getVar("phone_no");
+			"price_default" => [
+				"required" => "price is required"
+			],
 
-// 			$emp->save($data);
+			"max_num_people_default" => [
+				"required" => "max number of people is required"
+			],
+		];
 
-// 			$response = [
-// 				'status' => 200,
-// 				'error' => false,
-// 				'message' => 'Employee added successfully',
-// 				'data' => []
-// 			];
-// 		}
+		if (!$this->validate($rules, $messages)) {
 
-// 		return $this->respond($response);
-// 	}
+			$response = [
+				'status' => 500,
+				'error' => true,
+				'message' => $this->validator->getErrors(),
+				'data' => []
+			];
+		} else {
+
+			$emp = new ExcursionTemplateModel();
+
+			$data['title'] = $this->request->getVar("title");
+			$data['img'] = $this->request->getVar("img");
+			$data['type'] = $this->request->getVar("type");
+			$data['description'] = $this->request->getVar("description");
+			$data['price_default'] = $this->request->getVar("price_default");
+			$data['max_num_people_default'] = $this->request->getVar("max_num_people_default");
+
+			$emp->save($data);
+
+			$response = [
+				'status' => 200,
+				'error' => false,
+				'message' => 'Excursion Template added successfully',
+				'data' => []
+			];
+		}
+
+		return $this->respond($response);
+	}
 
 	public function listExcursionTemplate()
 	{
@@ -74,123 +93,144 @@ class ExcursionTemplateController extends ResourceController
 		return $this->respond($response);
 	}
 
-// 	public function showEmployee($emp_id)
-// 	{
-// 		$emp = new EmployeeModel();
+	public function showExcursionTemplate ($emp_id)
+	{
+		$emp = new ExcursionTemplateModel();
 
-// 		$data = $emp->find($emp_id);
-//         //$data = $model->where(['id' => $emp_id])->first();
+		$data = $emp->find($emp_id);
+        //$data = $model->where(['id' => $emp_id])->first();
 
-// 		if (!empty($data)) {
+		if (!empty($data)) {
 
-// 			$response = [
-// 				'status' => 200,
-// 				"error" => false,
-// 				'messages' => 'Single employee data',
-// 				'data' => $data
-// 			];
+			$response = [
+				'status' => 200,
+				"error" => false,
+				'messages' => 'Single excursion template data',
+				'data' => $data
+			];
 
-// 		} else {
+		} else {
 
-// 			$response = [
-// 				'status' => 500,
-// 				"error" => true,
-// 				'messages' => 'No employee found',
-// 				'data' => []
-// 			];
-// 		}
+			$response = [
+				'status' => 500,
+				"error" => true,
+				'messages' => 'No excursion template found',
+				'data' => []
+			];
+		}
 
-// 		return $this->respond($response);
-// 	}
+		return $this->respond($response);
+	}
 
-// 	public function updateEmployee($emp_id)
-// 	{
-// 		$rules = [
-// 			"name" => "required",
-// 			"email" => "required|valid_email|min_length[6]",
-// 			"phone_no" => "required",
-// 		];
+	public function updateExcursionTemplate ($emp_id)
+	{
+		$rules = [
+			"title" => "required|is_unique[excursions_template.title]",
+			"img" => "required",
+			"type" => "required",
+			"description" => "required",
+			"price_default" => "required",
+			"max_num_people_default" => "required",
+		];
 
-// 		$messages = [
-// 			"name" => [
-// 				"required" => "Name is required"
-// 			],
-// 			"email" => [
-// 				"required" => "Email required",
-// 				"valid_email" => "Email address is not in format"
-// 			],
-// 			"phone_no" => [
-// 				"required" => "Phone Number is required"
-// 			],
-// 		];
+		$messages = [
+			"title" => [
+				"required" => "title is required",
+				"is_unique" => "title already exists"
+			],
 
-// 		if (!$this->validate($rules, $messages)) {
+			"img" => [
+				"required" => "img route is required",	
+			],
 
-// 			$response = [
-// 				'status' => 500,
-// 				'error' => true,
-// 				'message' => $this->validator->getErrors(),
-// 				'data' => []
-// 			];
-// 		} else {
+			"type" => [
+				"required" => "type is required"
+			],
 
-// 			$emp = new EmployeeModel();
+			"description" => [
+				"required" => "description is required"
+			],
 
-// 			if ($emp->find($emp_id)) {
+			"price_default" => [
+				"required" => "price is required"
+			],
 
-// 				$data['name'] = $this->request->getVar("name");
-// 				$data['email'] = $this->request->getVar("email");
-// 				$data['phone_no'] = $this->request->getVar("phone_no");
+			"max_num_people_default" => [
+				"required" => "max number of people is required"
+			],
+		];
 
-// 				$emp->update($emp_id, $data);
 
-// 				$response = [
-// 					'status' => 200,
-// 					'error' => false,
-// 					'message' => 'Employee updated successfully',
-// 					'data' => []
-// 				];
-// 			}else {
+		if (!$this->validate($rules, $messages)) {
 
-// 				$response = [
-// 					'status' => 500,
-// 					"error" => true,
-// 					'messages' => 'No employee found',
-// 					'data' => []
-// 				];
-// 			}
-// 		}
+			$response = [
+				'status' => 500,
+				'error' => true,
+				'message' => $this->validator->getErrors(),
+				'data' => []
+			];
+		} else {
 
-// 		return $this->respond($response);
-// 	}
+			$emp = new ExcursionTemplateModel();
 
-// 	public function deleteEmployee($emp_id)
-// 	{
-// 		$emp = new EmployeeModel();
+			if ($emp->find($emp_id)) {
 
-// 		$data = $emp->find($emp_id);
+				$data['title'] = $this->request->getVar("title");
+				$data['img'] = $this->request->getVar("img");
+				$data['type'] = $this->request->getVar("type");
+				$data['description'] = $this->request->getVar("description");
+				$data['price_default'] = $this->request->getVar("price_default");
+				$data['max_num_people_default'] = $this->request->getVar("max_num_people_default");
 
-// 		if (!empty($data)) {
+				$emp->update($emp_id, $data);
 
-// 			$emp->delete($emp_id);
+				$response = [
+					'status' => 200,
+					'error' => false,
+					'message' => 'Excursion updated successfully',
+					'data' => []
+				];
+			}else {
 
-// 			$response = [
-// 				'status' => 200,
-// 				"error" => false,
-// 				'messages' => 'Employee deleted successfully',
-// 				'data' => []
-// 			];
+				$response = [
+					'status' => 500,
+					"error" => true,
+					'messages' => 'No excursion found',
+					'data' => []
+				];
+			}
+		}
 
-// 		} else {
+		return $this->respond($response);
+	}
 
-// 			$response = [
-// 				'status' => 500,
-// 				"error" => true,
-// 				'messages' => 'No employee found',
-// 				'data' => []
-// 			];
-// 		}
+	public function deleteExcursionTemplate($emp_id)
+	{
+		$emp = new ExcursionTemplateModel();
 
-// 		return $this->respond($response);
-// 	}
+		$data = $emp->find($emp_id);
+
+		if (!empty($data)) {
+
+			$emp->delete($emp_id);
+
+			$response = [
+				'status' => 200,
+				"error" => false,
+				'messages' => 'Excursion template deleted successfully',
+				'data' => []
+			];
+
+		} else {
+
+			$response = [
+				'status' => 500,
+				"error" => true,
+				'messages' => 'No excursion template found',
+				'data' => []
+			];
+		}
+
+		return $this->respond($response);
+	}
 }
