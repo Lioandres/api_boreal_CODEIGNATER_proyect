@@ -187,7 +187,7 @@ class ExcursionTemplateController extends ResourceController
 				$response = [
 					'status' => 200,
 					'error' => false,
-					'message' => 'Excursion updated successfully',
+					'message' =>'Excursion updated successfully',
 					'data' => []
 				];
 			}else {
