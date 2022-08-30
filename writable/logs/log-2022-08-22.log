@@ -1,0 +1,66 @@
+ERROR - 2022-08-22 02:59:02 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-08-22 02:59:02 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+in SYSTEMPATH/Database/BaseConnection.php on line 416.
+ 1 SYSTEMPATH/Database/BaseConnection.php(586): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `excursions_template`', [], false)
+ 3 SYSTEMPATH/Model.php(222): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH/Controllers/Api/ExcursionTemplateController.php(90): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Api\ExcursionTemplateController->listExcursionTemplate()
+ 7 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\ExcursionTemplateController))
+ 8 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+ERROR - 2022-08-22 02:59:11 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-08-22 02:59:11 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+in SYSTEMPATH/Database/BaseConnection.php on line 416.
+ 1 SYSTEMPATH/Database/BaseConnection.php(586): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `excursions_template`
+WHERE `excursions_template`.`id_excursion_template` = :excursions_template.id_excursion_template:', [...], false)
+ 3 SYSTEMPATH/Model.php(181): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(523): CodeIgniter\Model->doFind(true, '1')
+ 5 APPPATH/Controllers/Api/ExcursionTemplateController.php(100): CodeIgniter\BaseModel->find('1')
+ 6 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Api\ExcursionTemplateController->showExcursionTemplate('1')
+ 7 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\ExcursionTemplateController))
+ 8 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-08-22 07:09:08 --> Class "App\Controllers\Api\ExcursionModel" not found
+in APPPATH/Controllers/Api/ExcursionController.php on line 81.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Api\ExcursionController->listExcursion()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\ExcursionController))
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-08-22 07:10:00 --> Class "App\Controllers\Api\ExcursionModel" not found
+in APPPATH/Controllers/Api/ExcursionController.php on line 81.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Api\ExcursionController->listExcursion()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\ExcursionController))
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-08-22 07:12:49 --> Class "App\Controllers\Api\ExcursionModel" not found
+in APPPATH/Controllers/Api/ExcursionController.php on line 83.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Api\ExcursionController->listExcursion()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\ExcursionController))
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-08-22 07:28:57 --> Class "App\Controllers\Api\ExcursionTemplateModel" not found
+in APPPATH/Controllers/Api/ExcursionController.php on line 176.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Api\ExcursionController->updateExcursion('12')
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\ExcursionController))
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-08-22 07:30:31 --> Class "App\Controllers\Api\ExcursionTemplateModel" not found
+in APPPATH/Controllers/Api/ExcursionController.php on line 176.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Api\ExcursionController->updateExcursion('12')
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\ExcursionController))
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')

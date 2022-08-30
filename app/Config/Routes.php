@@ -47,6 +47,18 @@ $routes->group("api", ["namespace" => "App\Controllers\Api"] , function($routes)
        $routes->delete("delete/(:num)", "ExcursionTemplateController::deleteExcursionTemplate/$1");
     });
 
+    $routes->group("excursion", function($routes){
+        $routes->get("list", "ExcursionController::listExcursion");
+        $routes->post("add", "ExcursionController::addExcursion");
+        $routes->get("show/(:num)", "ExcursionController::showExcursion/$1");
+        $routes->put("update/(:num)", "ExcursionController::updateExcursion/$1");
+        $routes->delete("delete/(:num)", "ExcursionController::deleteExcursion/$1");
+     });
+
+     $routes->group("reservation", function($routes){
+        $routes->post("add", "ReservationsController::addReservation");
+     });
+
     $routes->post("register", "UserController::register");
     $routes->post("login", "UserController::login");
     $routes->get("profile", "UserController::details");
