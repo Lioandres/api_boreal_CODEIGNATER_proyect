@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ReservationModel extends Model
+class ReservationsModel extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'reservations';

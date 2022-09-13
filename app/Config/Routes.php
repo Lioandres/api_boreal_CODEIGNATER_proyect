@@ -61,6 +61,11 @@ $routes->group("api", ["namespace" => "App\Controllers\Api"] , function($routes)
 
     $routes->post("register", "UserController::register");
     $routes->post("login", "UserController::login");
+    $routes->post("changeMail", "UserController::changeMail");
+    $routes->post("changePass", "UserController::changePass");
+    $routes->post("changeRole", "UserController::changeRole");
+    $routes->get("listUser", "UserController::listUser");
+    $routes->get("showUser/(:num)", "UserController::showUser/$1");
     $routes->get("profile", "UserController::details");
     
 });

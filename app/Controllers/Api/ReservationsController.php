@@ -4,9 +4,15 @@ namespace App\Controllers\Api;
 
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\ReservationsModel;
+//use CodeIgniter\Database\Forge;
+
 
 class ReservationsController extends ResourceController
 {
+	public function __construct (){
+		//$db1 =Forge::getConnection();
+	}
+
     public function addReservation()
 	{
 		$rules = [
@@ -57,7 +63,7 @@ class ReservationsController extends ResourceController
 			];
 		} else {
 
-			$res = new ExcursionModel();
+			$res = new ReservationsModel();
 
 			$data['excursion_id'] = $this->request->getVar("excursion_id");
 			$data['payment_id'] = $this->request->getVar("payment_id");
@@ -68,10 +74,15 @@ class ReservationsController extends ResourceController
 
 			$res->save($data);
 
+			//$db = Database::connect();
+			// $forge = \Config\Database::forge();
+			// $last_id=$forge->insert_id();
+			
+
 			$response = [
 				'status' => 200,
 				'error' => false,
-				'message' => 'Reservation added successfully',
+				'message' => 'The reservation was adedd sucessfully',
 				'data' => []
 			];
 		}

@@ -50,4 +50,5 @@ Options All -Indexes
 
 <IfModule mod_headers.c>
     Header set Access-Control-Allow-Origin "*"
+	Header set Access-Control-Allow-Headers "*"
 </IfModule>
