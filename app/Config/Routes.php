@@ -43,7 +43,7 @@ $routes->group("api", ["namespace" => "App\Controllers\Api"] , function($routes)
        $routes->get("list", "ExcursionTemplateController::listExcursionTemplate");
        $routes->post("add", "ExcursionTemplateController::addExcursionTemplate");
        $routes->get("show/(:num)", "ExcursionTemplateController::showExcursionTemplate/$1");
-       $routes->put("update/(:num)", "ExcursionTemplateController::updateExcursionTemplate/$1");
+       $routes->post("update/(:num)", "ExcursionTemplateController::updateExcursionTemplate/$1");
        $routes->delete("delete/(:num)", "ExcursionTemplateController::deleteExcursionTemplate/$1");
     });
 
@@ -51,7 +51,7 @@ $routes->group("api", ["namespace" => "App\Controllers\Api"] , function($routes)
         $routes->get("list", "ExcursionController::listExcursion");
         $routes->post("add", "ExcursionController::addExcursion");
         $routes->get("show/(:num)", "ExcursionController::showExcursion/$1");
-        $routes->put("update/(:num)", "ExcursionController::updateExcursion/$1");
+        $routes->post("update/(:num)", "ExcursionController::updateExcursion/$1");
         $routes->delete("delete/(:num)", "ExcursionController::deleteExcursion/$1");
      });
 
