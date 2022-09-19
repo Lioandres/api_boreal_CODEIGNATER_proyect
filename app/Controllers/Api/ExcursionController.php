@@ -87,7 +87,7 @@ class ExcursionController extends ResourceController
 		$response = [
 			'status' => 200,
 			"error" => false,
-			'messages' => 'Excursion list',
+			'message' => 'Excursion list',
 			'data' => $exc->findAll()
 		];
 
@@ -106,7 +106,7 @@ class ExcursionController extends ResourceController
 			$response = [
 				'status' => 200,
 				"error" => false,
-				'messages' => 'Single excursion data',
+				'message' => 'Single excursion data',
 				'data' => $data
 			];
 
@@ -115,7 +115,7 @@ class ExcursionController extends ResourceController
 			$response = [
 				'status' => 500,
 				"error" => true,
-				'messages' => 'No excursion found',
+				'message' => 'No excursion found',
 				'data' => []
 			];
 		}
@@ -198,7 +198,7 @@ class ExcursionController extends ResourceController
 				$response = [
 					'status' => 500,
 					"error" => true,
-					'messages' => 'No excursion found',
+					'message' => 'No excursion found',
 					'data' => []
 				];
 			}
@@ -220,7 +220,7 @@ class ExcursionController extends ResourceController
 			$response = [
 				'status' => 200,
 				"error" => false,
-				'messages' => 'Excursion deleted successfully',
+				'message' => 'Excursion deleted successfully',
 				'data' => []
 			];
 
@@ -229,7 +229,7 @@ class ExcursionController extends ResourceController
 			$response = [
 				'status' => 500,
 				"error" => true,
-				'messages' => 'No excursionfound',
+				'message' => 'No excursionfound',
 				'data' => []
 			];
 		}

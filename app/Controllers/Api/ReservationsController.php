@@ -9,9 +9,6 @@ use App\Models\ReservationsModel;
 
 class ReservationsController extends ResourceController
 {
-	public function __construct (){
-		//$db1 =Forge::getConnection();
-	}
 
     public function addReservation()
 	{
@@ -59,7 +56,7 @@ class ReservationsController extends ResourceController
 				'status' => 500,
 				'error' => true,
 				'message' => $this->validator->getErrors(),
-				'data' => []
+				'data' => ""
 			];
 		} else {
 
@@ -69,21 +66,25 @@ class ReservationsController extends ResourceController
 			$data['payment_id'] = $this->request->getVar("payment_id");
 			$data['name'] = $this->request->getVar("name");
 			$data['last_name'] = $this->request->getVar("last_name");
+			$data['email'] = $this->request->getVar("email");
 			$data['phone'] = $this->request->getVar("phone");
 			$data['num_people'] = $this->request->getVar("num_people");
 
 			$res->save($data);
+			$last_id=$res->insertID();
+			$data['id_reservation']=$last_id;
 
-			//$db = Database::connect();
-			// $forge = \Config\Database::forge();
-			// $last_id=$forge->insert_id();
+
+
+			
 			
 
 			$response = [
 				'status' => 200,
 				'error' => false,
-				'message' => 'The reservation was adedd sucessfully',
-				'data' => []
+				'message' => 'RESERVA CONFIRMADA',
+				'data' => $last_id
+				
 			];
 		}
 

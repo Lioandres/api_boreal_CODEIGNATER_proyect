@@ -195,7 +195,7 @@ class ExcursionTemplateController extends ResourceController
 				$response = [
 					'status' => 500,
 					"error" => true,
-					'messages' => 'No excursion found',
+					'message' => 'No excursion found',
 					'data' => []
 				];
 			}
@@ -217,7 +217,7 @@ class ExcursionTemplateController extends ResourceController
 			$response = [
 				'status' => 200,
 				"error" => false,
-				'messages' => 'Excursion template deleted successfully',
+				'message' => 'Excursion template deleted successfully',
 				'data' => []
 			];
 
@@ -226,7 +226,7 @@ class ExcursionTemplateController extends ResourceController
 			$response = [
 				'status' => 500,
 				"error" => true,
-				'messages' => 'No excursion template found',
+				'message' => 'No excursion template found',
 				'data' => []
 			];
 		}
