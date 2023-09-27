@@ -9,6 +9,13 @@
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/codeigniter4/CodeIgniter4/pulls)
 <br>
 
+## Install the proyect
+
+1. Clone the repository
+2. Change to the repository folder
+3. In the repository folder install dependencies with ´´´$ composer install´´´
+5. Run the project with ´´´$ php spark serve´´´
+
 ## What is CodeIgniter?
 
 CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
